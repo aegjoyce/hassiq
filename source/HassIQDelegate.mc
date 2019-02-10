@@ -108,6 +108,7 @@ class HassIQDelegate extends WatchUi.BehaviorDelegate {
 		progressTimer.start(method(:onTimer), 500, false);
 
 		state.callService(domain, service, entity, method(:onServiceCalled));
+		state.requestUpdate();
 	}
 
 	function onStateUpdated(state) {
